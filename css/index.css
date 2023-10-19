@@ -40,7 +40,7 @@ header h1{
 .concert-schedule{
     position: relative;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1.5fr 1fr;
 }
 
 h3{
@@ -48,12 +48,34 @@ h3{
 }
 
 .learn-more{
-    margin-left: 10px;
-    background-color: rgb(34, 132, 37);
+    margin: 15px;
+    background-color: rgb(34,132,37);
     color: #fff;
-    padding: 10px 30px 10px 20px;
-    border-radius: 20px;
+    padding: 15px;
+    border-radius: 15px;
     width: 100px;
+    user-select: none;
+}
+
+.song-info{
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 80%;
+}
+
+.learn-more:hover .song-info{
+    display: block;
+    opacity: 1;
 }
 
 .row-border{
@@ -61,16 +83,45 @@ h3{
     grid-column: 1 / 5;
 }
 
+.phone-display{
+    display: none;
+}
+
 @media screen and (max-width: 500px){
     .concert-schedule{
         display: flex;
         flex-direction: column;
+        font-size: 13px;
     }
     .row-border{
         border-top: none;
     }
     header h1{
         font-size: 30px;
+    }
+    .learn-more{
+        display: none;
+    }
+    .phone-display{
+        display: block;
+        opacity: 1;
+    }
+
+    #concert1::after,
+    #concert2::after,
+    #concert3::after,
+    #concert4::after,
+    #concert5::after,
+    #concert6::after,
+    #concert7::after,
+    #concert8::after,
+    #concert9::after{
+        content: "";
+        display: block;
+        border-bottom: 3px solid black;
+        border-radius: 5px;
+        margin: 10px;
+
     }
 }
 
