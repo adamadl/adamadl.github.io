@@ -1,0 +1,61 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(54, 52, 52);
+    font-family: 'Courier New', Courier, monospace;
+}
+nav{
+    height: 50vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:20px;
+    background-color: rgb(7, 41, 142);
+}
+
+h1{
+    color: aliceblue;
+}
+nav a{
+    width:10vw;
+    text-align: center;
+    text-decoration: none;
+    color:white;
+}
+
+
+img{
+    width:30vw;
+    height: 30vh;
+}
+
+#red-ball{
+    background-color: #FF6F61;
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+    position: absolute;
+    left:5vw;
+    top:20rem;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+#red-ball:hover{
+    animation-name: bounce;
+    animation-duration: 1s; 
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+    0%, 100%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(100px);
+    }
+}

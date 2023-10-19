@@ -47,6 +47,15 @@ h3{
     margin-left: 20px;
 }
 
+.learn-more{
+    margin-left: 10px;
+    background-color: rgb(34, 132, 37);
+    color: #fff;
+    padding: 10px 30px 10px 20px;
+    border-radius: 20px;
+    width: 100px;
+}
+
 .row-border{
     border-top: 2px solid rgb(181, 179, 179);
     grid-column: 1 / 5;
