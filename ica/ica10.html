@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+button {
+  font-family: "helvetica neue", helvetica, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  border: 2px solid rgb(200 200 0 / 0.6);
+  background-color: rgb(0 217 217 / 0.6);
+  color: white;
+  box-shadow: 1px 1px 2px rgb(0 0 200 / 0.4);
+  border-radius: 10px;
+  padding: 3px 10px;
+  width: 100px;
+  height: 150px;
+}
+
+div{
+    cursor: pointer;
+}
+</style>
+<body>
+    <div id="press">
+        <h1>Hello!</h1>
+    </div>
+    <button type="button">Hover Over Me</button>
+
+    <script>
+        const button = document.querySelector("button");
+        const press = document.getElementById("press")
+
+        button.addEventListener('mouseenter', changeColor);
+        button.addEventListener('mouseleave', originalContent);
+
+        press.addEventListener('click', changeContent);
+
+        function changeColor(){
+            button.style.backgroundColor = "blue";
+        }
+
+        function originalContent(){
+            button.style.backgroundColor = "purple";
+        }
+
+        function changeContent(){
+            press.innerHTML = `<h1>Welcome!</h1>`
+        }
+    </script>
+</body>
+</html>
