@@ -35,6 +35,7 @@ checkbox.addEventListener("change", function(){
     }
     else{
         slider.style.width = "10%";
+        slider.style.transform = `rotate(0deg)`;
         slider.classList.remove("tilted");
     }
 });
