@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#slider{
+    width:10%;
+    transition: transform 0.3s ease;
+}
+
+button{
+    margin-top: 20px;
+}
+
+.tilted{
+    transform-origin: left center;
+}
