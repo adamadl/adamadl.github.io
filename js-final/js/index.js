@@ -32,7 +32,7 @@ checkbox.addEventListener("change", function(){
     }
 });
 
-function UpdatePhone(){
+function Slide(){
 
     tiltAngle = Number(advanced.value);
 
@@ -57,4 +57,4 @@ advanced.oninput = function(){
     slider.classList.add("tilted");
 };
 
-setInterval(UpdatePhone, 10);
+setInterval(Slide, 10);
