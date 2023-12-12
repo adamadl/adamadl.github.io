@@ -1,24 +1,16 @@
 // console.log("connected")
 
 const slider = document.getElementById("slider");
+const advanced = document.getElementById("advanced_slider");
 const output = document.getElementById("output");
 const submit = document.getElementById("submit");
 const checkbox = document.getElementById("checkbox");
 
-slider.addEventListener("input", function() {
-    let phoneNumber = formatPhoneNumber(slider.value);
-    output.innerHTML = "Selected Phone Number: " + phoneNumber;
+let value = slider.value;
 
-    if (checkbox.checked){
-        let tiltAngle = (slider.value / slider.max) * 10;
-        slider.style.transform = `rotate(${tiltAngle}deg)`;
-        slider.classList.add("tilted");
-    }
-    else{
-        slider.style.transform = `rotate(0deg)`;
-        slider.classList.remove("tilted");
-    }
-});
+let tiltAngle = advanced.value;
+
+let speed = 0;
 
 function formatPhoneNumber(number){
     let formattedNumber = number.toString().padStart(10, '0');
@@ -31,11 +23,38 @@ submit.addEventListener("click", function(){
 
 checkbox.addEventListener("change", function(){
     if (checkbox.checked){
-        slider.style.width = "80%";
+        advanced.style.display = "inline";
     }
     else{
-        slider.style.width = "10%";
+        advanced.style.display = "none";
+        advanced.value = 0;
         slider.style.transform = `rotate(0deg)`;
-        slider.classList.remove("tilted");
     }
 });
+
+function UpdatePhone(){
+
+    tiltAngle = Number(advanced.value);
+
+    value = Number(slider.value);
+
+    speed += tiltAngle * 10;
+
+    speed *= 0.9;
+
+    value += speed*100000
+
+    slider.value = value;
+
+    let phoneNumber = formatPhoneNumber(slider.value);
+    output.innerHTML = "Selected Phone Number: " + phoneNumber;
+}
+
+
+advanced.oninput = function(){
+    tiltAngle = Number(advanced.value);
+    slider.style.transform = `rotate(${tiltAngle}deg)`;
+    slider.classList.add("tilted");
+};
+
+setInterval(UpdatePhone, 10);

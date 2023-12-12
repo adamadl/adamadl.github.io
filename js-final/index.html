@@ -10,10 +10,13 @@
     <h1>Please Enter Your Phone Number</h1>
     <input type="range" id="slider" min="0" max="9999999999" value="0" step="1">
 
-    <p id="output">Selected Phone Number: (000) 000-0000</p>
-
-    <input type="checkbox" id="checkbox">
-    <label for="checkbox"> Advanced Mode</label><br>
+    <div id="user_input">
+        <p id="output">Selected Phone Number: (000) 000-0000</p>
+        <input type="checkbox" id="checkbox">
+        <span class="checkmark"></span>
+        <label for="checkbox">Advanced Mode</label><br>
+        <input type="range" id="advanced_slider" min="-10" max="10" value="0" step="0.02">
+    </div>
 
     <div>
         <button id="submit">Submit</button>
